@@ -1,0 +1,38 @@
+#defines {
+	pythia_version = 8.1.86
+	ptyhia_package_version = 8.186.1
+	d_pythia = ..\Pythia\Pythia8186
+	
+	// Some things that get built from above
+}
+
+nuget {
+    nuspec {
+        id = Pythia8
+        version = ${ptyhia_package_version};
+        title = Pythia8
+        authors = {T. Sjostrand, J. Christiansen, N. Desai, P. Ilten, S. Mrenna, S. Prestel, C. Rasmussen, P. Skands};
+        owners = {G. Watts};
+        licenseUrl: "http://www.gnu.org/licenses/gpl-2.0.html";
+        projectUrl: "https://github.com/gordonwatts/PythiaPackaging/";
+        iconUrl: "http://home.thep.lu.se/~torbjorn/pythiaaux/pythia.gif";
+        requireLicenseAcceptance: false;
+        summary: Pythia ${pythia_version} C++ MC generator
+        description: Contains static libraries and config files for Pythia8 VS2012 and VS2013 versions.
+        releaseNotes: "Release ${pythia_version} of Pythia";
+        tags: data;
+    };
+
+    files {
+        include: { "${d_pythia}\include\**\*"};
+
+		[x86,dynamic,v120,debug]
+		{
+            lib: { "${d_pythia}\Debug\*.lib" };
+		}
+		[x86,dynamic,v120,release]
+		{
+            lib: { "${d_pythia}\Release\*.lib" };
+		}
+    }
+}
