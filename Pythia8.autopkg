@@ -22,7 +22,16 @@ nuget {
     };
 
     files {
+		// We will need to move some content over to the proper app directory.
+	    data += {
+            #add-all-files : Items.MyDataFiles;
+            #destination : ${build_root}\MyData;
+        };
+
+		// Specify the files we want to carry along.
+		
         include: { "${d_pythia}\include\**\*"};
+		data: { "${d_pythia}\xmldoc\**\*" };
 
 		[x86,dynamic,v120,debug]
 		{
@@ -33,4 +42,18 @@ nuget {
             lib: { "${d_pythia}\Release\*.lib" };
 		}
     }
+	
+	// Some of our file-s need special placement after the build. This is where we add targets to take care of that.
+	// This should happen after the build completes (target is AfterBuild).
+
+	targets {
+		AfterBuild {
+			.Copy {
+				SourceFiles= "@(MyDataFiles)";
+				DestinationFiles = "@(MyDataFiles->'$(TargetDir)Pythia8Data\%(RecursiveDir)%(Filename)%(Extension)')";
+				SkipUnchangedFiles = true;
+				UseHardlinksIfPossible = true;
+			};
+		}
+	}		
 }
