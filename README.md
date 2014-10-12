@@ -31,7 +31,8 @@ Steps:
 4. PS> Get-PythiaBuiltRelease 8186 ..\Pythia .
 5. Edit the Pythia8.autopkg file to make sure the proper version is listed.
 6. PS> Write-NugetPackage Pythia8.autopkg
-7. PS> Publish-NugetPackage -Package Pythia8.XXX.nupkg <where XXX is the version>
+7. PS> nuget push Pythia8.*.nupkg
+8. On the nuget website unpublish the overlay packages to prevent confusion from the nuget search interface in Visual Studio.
 
 Notes
 =====
