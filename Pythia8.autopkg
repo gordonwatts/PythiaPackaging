@@ -1,26 +1,24 @@
 #defines {
-	pythia_version = 8.1.86
-	ptyhia_package_version = 8.186.1
-	d_pythia = ..\Pythia\Pythia8186
-	
-	// Some things that get built from above
+	pythia_version = 8.1.86,
+	ptyhia_package_version = 8.186.1,
+	d_pythia = ..\Pythia\Pythia8186,
 }
 
 nuget {
     nuspec {
-        id = Pythia8
+        id = Pythia8;
         version = ${ptyhia_package_version};
-        title = Pythia8
+        title = Pythia8;
         authors = {T. Sjostrand, J. Christiansen, N. Desai, P. Ilten, S. Mrenna, S. Prestel, C. Rasmussen, P. Skands};
         owners = {G. Watts};
         licenseUrl: "http://www.gnu.org/licenses/gpl-2.0.html";
         projectUrl: "https://github.com/gordonwatts/PythiaPackaging/";
         iconUrl: "http://home.thep.lu.se/~torbjorn/pythiaaux/pythia.gif";
         requireLicenseAcceptance: false;
-        summary: Pythia ${pythia_version} C++ MC generator
-        description: Contains static libraries and config files for Pythia8 VS2012 and VS2013 versions.
+        summary: Pythia ${pythia_version} C++ MC generator;
+        description: Contains static libraries and config files for Pythia8 VS2012 and VS2013 versions.;
         releaseNotes: "Release ${pythia_version} of Pythia";
-        tags: data;
+        tags: data physics MonteCarlo;
     };
 
     files {
