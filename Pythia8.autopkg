@@ -35,11 +35,19 @@ nuget {
 
 		[x86,dynamic,v120,debug]
 		{
-            lib: { "${d_pythia}\Debug\*.lib" };
+            lib: { "${d_pythia}\Debug-v120\*.lib" };
 		}
 		[x86,dynamic,v120,release]
 		{
-            lib: { "${d_pythia}\Release\*.lib" };
+            lib: { "${d_pythia}\Release-v120\*.lib" };
+		}
+		[x86,dynamic,v110,debug]
+		{
+            lib: { "${d_pythia}\Debug-v110\*.lib" };
+		}
+		[x86,dynamic,v110,release]
+		{
+            lib: { "${d_pythia}\Release-v110\*.lib" };
 		}
     }
 	
