@@ -15,6 +15,22 @@ Using Pythia8 In a C++ Program
 4. In the project "Debug" settings, add the environment variable definition: "PYTHIA8DATA=$(TargetDir)\Pythia8Data"
 5. Run!
 
+Building a new set of NuGet packages
+====================================
+
+Prereq:
+1. Visual Studio 2013 and 2012 installed (scripts build both versions)
+2. CoApp tools (https://github.com/coapp/coapp.powershell). At the time this was written (Oct 2014) we had to use the version in github. Extract, and build the powershell tools version, then run it in Powershell in order to get the Write-NugetPackage command.
+
+Steps:
+1. Download this package to your machine.
+2. Using powershell put yourself in this directory.
+3. PS> import-module ./Pythia8Packaging.psm1
+4. PS> Get-PythiaBuiltRelease 8186 ..\Pythia .
+5. Edit the Pythia8.autopkg file to make sure the proper version is listed.
+6. PS> Write-NugetPackage Pythia8.autopkg
+7. PS> Publish-NugetPackage -Package Pythia8.XXX.nupkg <where XXX is the version>
+
 Notes
 =====
 
