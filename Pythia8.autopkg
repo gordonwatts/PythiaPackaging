@@ -16,9 +16,9 @@ nuget {
         iconUrl: "http://home.thep.lu.se/~torbjorn/pythiaaux/pythia.gif";
         requireLicenseAcceptance: false;
         summary: Pythia ${pythia_version} C++ MC generator;
-        description: Contains static libraries and config files for Pythia8 VS2012 and VS2013 versions.;
+        description: Contains static libraries and config files for Pythia8 VS2012 and VS2013 versions. Remember to define the environment variable PYTHIA8DATA;
         releaseNotes: "Release ${pythia_version} of Pythia";
-        tags: data physics MonteCarlo;
+        tags: data particle physics "Monte Carlo" MC;
     };
 
     files {
