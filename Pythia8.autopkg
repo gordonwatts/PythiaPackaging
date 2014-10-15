@@ -1,6 +1,6 @@
 #defines {
 	pythia_version = 8.1.86,
-	ptyhia_package_version = 8.186.1,
+	ptyhia_package_version = 8.186.2,
 	d_pythia = ..\Pythia\Pythia8186,
 }
 
