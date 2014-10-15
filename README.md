@@ -15,6 +15,8 @@ Using Pythia8 In a C++ Program
 4. In the project "Debug" settings, add the environment variable definition: "PYTHIA8DATA=$(TargetDir)\Pythia8Data"
 5. Run!
 
+The nuget package can be found here: https://www.nuget.org/packages/Pythia8/
+
 Building a new set of NuGet packages
 ====================================
 
