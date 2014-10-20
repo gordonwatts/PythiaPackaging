@@ -17,6 +17,12 @@ Using Pythia8 In a C++ Program
 
 The nuget package can be found here: https://www.nuget.org/packages/Pythia8/
 
+A debug database (pdb) is included for all builds. However, source code is not part of the nuget package,
+nor has it been placed on any internet symbol servers. For now, if you want to step in, you should download
+the offical source tar ball and redirect visual studio when it asks you to manually find the source file.
+Make sure you match the nuget version to the tarball or you'll get some odd results. And remember a release
+build is fully optimized, so...
+
 Building a new set of NuGet packages
 ====================================
 
