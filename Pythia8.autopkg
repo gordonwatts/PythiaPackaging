@@ -1,6 +1,6 @@
 #defines {
 	pythia_version = 8.1.86,
-	ptyhia_package_version = 8.186.2,
+	ptyhia_package_version = 8.186.3,
 	d_pythia = ..\Pythia\Pythia8186,
 }
 
@@ -36,18 +36,23 @@ nuget {
 		[x86,dynamic,v120,debug]
 		{
             lib: { "${d_pythia}\Debug-v120\*.lib" };
+            symbols: { "${d_pythia}\Debug-v120\*.pdb" };
+			
 		}
 		[x86,dynamic,v120,release]
 		{
             lib: { "${d_pythia}\Release-v120\*.lib" };
+            symbols: { "${d_pythia}\Release-v120\*.pdb" };
 		}
 		[x86,dynamic,v110,debug]
 		{
             lib: { "${d_pythia}\Debug-v110\*.lib" };
+            symbols: { "${d_pythia}\Debug-v110\*.pdb" };
 		}
 		[x86,dynamic,v110,release]
 		{
             lib: { "${d_pythia}\Release-v110\*.lib" };
+            symbols: { "${d_pythia}\Release-v110\*.pdb" };
 		}
     }
 	

@@ -62,7 +62,8 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 	  <AdditionalIncludeDirectories>"$(PYTHIABUILDDIR)/include";$(PYTHIADIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4800;4244</DisableSpecificWarnings>
-    </ClCompile>
+	  <ProgramDataBaseFileName>$(OutDir)libProj-vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+	</ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -79,7 +80,8 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
 	  <AdditionalIncludeDirectories>"$(PYTHIABUILDDIR)/include";$(PYTHIADIR)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4800;4244</DisableSpecificWarnings>
-    </ClCompile>
+	  <ProgramDataBaseFileName>$(OutDir)libProj-vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+	</ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
