@@ -1,6 +1,6 @@
 #defines {
 	pythia_version = 8.1.86,
-	ptyhia_package_version = 8.186.3,
+	ptyhia_package_version = 8.186.4,
 	d_pythia = ..\Pythia\Pythia8186,
 }
 
@@ -66,6 +66,12 @@ nuget {
 				DestinationFiles = "@(MyDataFiles->'$(TargetDir)Pythia8Data\%(RecursiveDir)%(Filename)%(Extension)')";
 				SkipUnchangedFiles = true;
 				UseHardlinksIfPossible = true;
+			};
+			.AddDebugEnv {
+				EnvVarName = "PYTHIA8Data";
+				EnvValue = "PYTHIA8DATA=$(SolutionDir)\$(Configuration)\Pythia8Data" ;
+				UserSettingsPath = "$(ProjectPath).user";
+				ConfigPlatform = "$(Configuration)|$(Platform)";
 			};
 		}
 	}		
