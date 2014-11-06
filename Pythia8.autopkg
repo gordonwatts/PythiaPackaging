@@ -27,10 +27,6 @@ nuget {
 			DLL = ..\ROOTPackageBuilders\ROOTMSBuildTasks\bin\Release\ROOTMSBuildTasks.dll;
 		};
 	};
-	taskdecl {
-			Name = AddDebugEnv;
-			DLL = ..\ROOTPackageBuilders\ROOTMSBuildTasks\bin\Release\ROOTMSBuildTasks.dll;
-	};
 
     files {
 		// We will need to move some content over to the proper app directory.
