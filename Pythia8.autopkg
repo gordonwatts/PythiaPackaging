@@ -1,6 +1,6 @@
 #defines {
 	pythia_version = 8.1.86,
-	ptyhia_package_version = 8.186.4,
+	ptyhia_package_version = 8.186.6,
 	d_pythia = ..\Pythia\Pythia8186,
 }
 
@@ -16,10 +16,21 @@ nuget {
         iconUrl: "http://home.thep.lu.se/~torbjorn/pythiaaux/pythia.gif";
         requireLicenseAcceptance: false;
         summary: Pythia ${pythia_version} C++ MC generator;
-        description: Contains static libraries and config files for Pythia8 VS2012 and VS2013 versions. Remember to define the environment variable PYTHIA8DATA;
-        releaseNotes: "Release ${pythia_version} of Pythia";
+        description: "Contains static libraries and config files for Pythia8 VS2012 and VS2013 versions. PYTHIA8DATA is defined when you build, but you must open and close the solution the first time for the IDE to pick it up";
+        releaseNotes: "Release ${pythia_version} of Pythia, now writes PYTHIA8Data into debug environment settings.";
         tags: data particle physics "Monte Carlo" MC;
     };
+	
+	customtasks {
+		task {
+			name = AddDebugEnv;
+			DLL = ..\ROOTPackageBuilders\ROOTMSBuildTasks\bin\Release\ROOTMSBuildTasks.dll;
+		};
+	};
+	taskdecl {
+			Name = AddDebugEnv;
+			DLL = ..\ROOTPackageBuilders\ROOTMSBuildTasks\bin\Release\ROOTMSBuildTasks.dll;
+	};
 
     files {
 		// We will need to move some content over to the proper app directory.
@@ -69,7 +80,7 @@ nuget {
 			};
 			.AddDebugEnv {
 				EnvVarName = "PYTHIA8Data";
-				EnvValue = "PYTHIA8DATA=$(SolutionDir)\$(Configuration)\Pythia8Data" ;
+				EnvValue = "$(SolutionDir)\$(Configuration)\Pythia8Data" ;
 				UserSettingsPath = "$(ProjectPath).user";
 				ConfigPlatform = "$(Configuration)|$(Platform)";
 			};
